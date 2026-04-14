@@ -1,1 +1,7 @@
 .DS_Store
+build/
+*.o
+*.out
+*.exe
+mon_programme
+a.out
