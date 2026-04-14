@@ -3,5 +3,5 @@ build/
 *.o
 *.out
 *.exe
-mon_programme
+programme
 a.out
