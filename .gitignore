@@ -19,6 +19,6 @@ a.out
 programme
 
 # Rust / Cargo
-/target
+target/
 **/*.rs.bk
 *.pdb
