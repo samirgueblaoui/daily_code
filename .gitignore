@@ -18,3 +18,7 @@ compile_commands.json
 a.out
 programme
 
+# Rust / Cargo
+/target
+**/*.rs.bk
+*.pdb
