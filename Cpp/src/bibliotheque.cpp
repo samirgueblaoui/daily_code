@@ -1,6 +1,4 @@
 #include "bibliotheque.hpp"
-#include <iostream>
-#include <string>
 #include <cmath>
 
 
@@ -119,4 +117,23 @@ int nbr_iteration_lettre(std::string s, std::string s2){
     return compteur;
 }
 
-//Niveau 6
+//Niveau 7
+
+double moyenne_vecteur(const std::vector<int>& v){
+    double sum = 0;
+
+    for(int x : v){
+        sum += x;
+    }
+
+    return sum / v.size();
+}
+
+bool is_in_vecteur(const std::vector<int>& v, int n){
+    for(int x : v){
+        if(x == n){
+            return true;
+        }
+    }
+    return false;
+}

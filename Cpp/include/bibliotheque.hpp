@@ -1,6 +1,6 @@
 #pragma once
-#include <iostream>
 #include <string>
+#include <vector>
 
 //niveau 3
 bool is_prime(int p);
@@ -19,5 +19,6 @@ std::string majuscule_to_minuscule(std::string s);
 std::string minuscule_to_mjuscule(std::string s);
 int nbr_iteration_lettre(std::string s, std::string s2);
 
-//Niveau 6
-
+//Niveau 7
+double moyenne_vecteur(std::vector<int> v);
+bool is_in_vecteur(std::vector<int> v, int n);

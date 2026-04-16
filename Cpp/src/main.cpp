@@ -1,6 +1,4 @@
 #include "hello.hpp"
-#include <iostream>
-#include <string>
 
 int main() {
 
@@ -9,7 +7,8 @@ int main() {
     //niveau_3();
     //niveau_4();
     //niveau_5();
-    niveau_6();
+    //niveau_6();
+    niveau_7();
 
     return 0;
 }

@@ -2,7 +2,8 @@
 #include "bibliotheque.hpp"
 #include <iostream>
 #include <string>
-#include <cmath>
+#include <algorithm>
+#include <vector>
 
 void niveau_1(){
 
@@ -399,4 +400,63 @@ void niveau_6(){
     }
 }
 
+void niveau_7(){
+
+    // Niveau 7 : Vector
+
+    //1. Lire n nombres dans un vector<int>.
+
+    int n;
+
+    std::cout << "Entré la taille du vecteur : ";
+    std::cin >> n;
+
+    std::vector<int> v(n);
+
+    for(int i = 0; i < n; i++){
+        std::cout << "Entré la valeur numéro " << i+1 << " du vecteur : ";
+        std::cin >> v[i]; 
+    }
+    //2. Afficher seulement les nombres pairs du vecteur.
+
+    std::cout << "Les nombres pair du vecteur sont : ";
+    for(int x : v){
+        if(x % 2 == 0){
+            std::cout << x << std::endl;
+        }
+    }
+
+    //3. Calculer la moyenne des valeurs.
+
+    
+    std::cout << "La moyenne des valeurs du vecteur est : " << moyenne_vecteur(v) << std::endl;
+
+    //4. Chercher si une valeur existe dans le vecteur.
+
+    int valeur;
+
+    std::cout << "Entré un entier : ";
+    std::cin >> valeur;
+
+    if(is_in_vecteur(v, valeur)){
+        std::cout << valeur << " est dans le vecteur.\n";
+    }
+    else {
+        std::cout << valeur << " n'est pas dans le vecteur.\n";
+    }
+
+    //5. Trier le vecteur dans l’ordre croissant.
+
+    std::vector<int> v_trier = v;
+
+    std::sort(v_trier.begin(), v_trier.end());
+
+    std::cout << "voici le vecteur trier dans l'ordre croissant :\n";
+
+    for(int x : v_trier){
+        std::cout << x << std::endl;
+    }
+    
+
+}
 
