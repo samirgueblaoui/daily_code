@@ -335,3 +335,68 @@ void niveau_5(){
 
 }
 
+void niveau_6(){
+
+    // Niveau 6 : tableaux
+
+    //0. Demander à l'utilisateur d'entrer un tableau de taille 5.
+
+    int tab[5];
+
+    for(int i = 0; i < 5; i++){
+        std::cout << "Entré la valeur numero " << i+1 << " du tableau : ";
+        std::cin >> tab[i];
+    }
+
+    //1. afficher le tableau.
+    
+    for(int n : tab){
+        std::cout << n << std::endl;
+    }
+
+    //2. Calculer la somme des éléments d’un tableau.
+    
+    int sum = 0;
+
+    for(int n : tab){
+        sum += n;
+    }
+
+    std::cout << "la somme des éléments du tableau est " << sum << std::endl;
+
+    //3. Trouver la plus grande valeur d’un tableau.
+
+    int max = tab[0];
+
+    for(int n : tab){
+        max = std::max(max, n);
+    }
+
+    std::cout << "La plus grande valeur du tableau est : " << max << std::endl;
+
+    //4. Compter combien de valeurs sont supérieures (au sens large) à 10.
+
+    int compteur = 0;
+
+    for(int n : tab){
+        if(n >= 10){
+            compteur++;
+        }
+    }
+
+    std::cout << "Il y a " << compteur << " valeur >= 10 dans le tableau\n";
+
+    //5. Inverser un tableau.
+
+    int tab_inverse[5];
+
+    for(int i = 0; i < 5; i++){
+        tab_inverse[i] = tab[5 - 1 - i];
+    }
+
+    for(int n : tab_inverse){
+        std::cout << n << std::endl;
+    }
+}
+
+

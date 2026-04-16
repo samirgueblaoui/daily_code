@@ -118,3 +118,5 @@ int nbr_iteration_lettre(std::string s, std::string s2){
     }
     return compteur;
 }
+
+//Niveau 6

@@ -5,3 +5,4 @@ void niveau_2();
 void niveau_3();
 void niveau_4();
 void niveau_5();
+void niveau_6();

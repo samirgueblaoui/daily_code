@@ -18,3 +18,6 @@ bool is_palindrome(std::string s);
 std::string majuscule_to_minuscule(std::string s);
 std::string minuscule_to_mjuscule(std::string s);
 int nbr_iteration_lettre(std::string s, std::string s2);
+
+//Niveau 6
+
