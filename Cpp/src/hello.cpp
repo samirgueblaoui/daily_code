@@ -270,6 +270,68 @@ void niveau_4(){
 }
 
 void niveau_5(){
-    
+
+    // Niveau 5 : chaînes de caractères
+
+    //1. Demander une phrase et afficher sa longueur.
+
+    std::string phrase;
+
+    std::cin.ignore();
+    std::cout << "Ecrire une phrase : ";
+    std::getline(std::cin, phrase);
+
+    std::cout << "La longueur de la phrase est de : " << phrase.size() << std::endl;
+
+    //2. Compter le nombre de voyelles dans une chaîne.
+
+    int voyelle = 0;
+
+    std::cout << "Entré une phrase : ";
+    std::getline(std::cin, phrase);
+
+    for(char c : phrase){
+        if (c == 'a' || c == 'A' || c == 'e' || c == 'E' || c == 'i' || c == 'I' || c == 'o' || c == 'O' || c == 'u' || c == 'U' || c == 'y' || c == 'Y'){
+            voyelle++;
+        }
+    }
+
+    std::cout << "Il y a " << voyelle << " voyelles dans la phrase.\n";
+
+    //3. Vérifier si un mot est un palindrome.
+
+    std::string mot;
+
+    std::cout << "Entré un mot : ";
+    std::getline(std::cin, mot);
+
+    if(is_palindrome(majuscule_to_minuscule(supp_espace_ponctuation(mot)))){
+        std::cout << mot << " est un palindrome.\n";
+    }
+    else {
+        std::cout << mot << " n'est pas un palindrome.\n";
+    }
+
+    //4. Mettre une chaîne en minuscule.
+
+    std::string s;
+
+    std::cout << "Entré une chaine de caractere : ";
+    std::getline(std::cin, s);
+
+    std::cout << majuscule_to_minuscule(s) << std::endl;
+
+    //5. Compter combien de fois une lettre apparaît dans un mot.
+
+    std::string lettre;
+
+    std::cout << "Entré un mot : ";
+    std::getline(std::cin, mot);
+    std::cout << "Entré une lettre : ";
+    std::getline(std::cin, lettre);
+
+
+    std::cout << "Il y a " << nbr_iteration_lettre(majuscule_to_minuscule(mot), majuscule_to_minuscule(lettre)) << " fois la lettre " << lettre << " dans " << mot << std::endl;
+
 }
 

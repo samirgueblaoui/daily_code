@@ -61,3 +61,60 @@ bool is_pair(int n){
 double moyenne_3_nombres(double x1, double x2, double x3){
     return (x1 + x2 + x3)/3.0;
 }
+
+//Niveau 5
+
+std::string supp_espace_ponctuation(std::string s){
+    std::string s2 = "";
+    for(char c : s){
+        if(c == ' ' || c == '.' || c == ',' || c == ':' || c == ';' || c == '?' || c == '!'){
+            continue;
+        }
+        s2 += c;
+    }
+    return s2;
+}
+
+bool is_palindrome(std::string s){
+    for(int i = 0; i < s.size() / 2; i++){
+        if (s[i] != s[s.size() - 1 - i]){
+            return false;
+        }
+    }
+    return true;
+}
+
+std::string majuscule_to_minuscule(std::string s){
+    std::string s2 = "";
+
+    for(char c : s){
+        if(c <= 90 && c >= 65){
+            c += 32; 
+        }
+        s2 += c;
+    }
+    return s2;
+}
+
+std::string minuscule_to_mjuscule(std::string s){
+    std::string s2 = "";
+
+    for(char c : s){
+        if(c <= 122 && c >= 97){
+            c -= 32; 
+        }
+        s2 += c;
+    }
+    return s2;
+}
+
+int nbr_iteration_lettre(std::string s, std::string s2){
+    char c = s2[0];
+    int compteur = 0;
+    for(char x : s){
+        if(x == c){
+            compteur++;
+        }
+    }
+    return compteur;
+}

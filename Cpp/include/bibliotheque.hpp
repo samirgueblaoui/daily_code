@@ -1,4 +1,6 @@
 #pragma once
+#include <iostream>
+#include <string>
 
 //niveau 3
 bool is_prime(int p);
@@ -9,3 +11,10 @@ double carre_nombre(double x);
 double max_nombre(double x, double y);
 bool is_pair(int n);
 double moyenne_3_nombres(double x1, double x2, double x3);
+
+//Niveau 5
+std::string supp_espace_ponctuation(std::string s);
+bool is_palindrome(std::string s);
+std::string majuscule_to_minuscule(std::string s);
+std::string minuscule_to_mjuscule(std::string s);
+int nbr_iteration_lettre(std::string s, std::string s2);
