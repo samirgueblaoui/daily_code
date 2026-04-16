@@ -115,8 +115,13 @@ void niveau_3(){
 
     int entier;
 
-    std::cout << "entrez un entier positif : ";
+    std::cout << "entrez un entier 0 <= n <= 20: ";
     std::cin >> entier;
+
+    while(entier < 0 || entier > 20){
+        std::cout << "entrez un entier 0 <= n <= 20: ";
+        std::cin >> entier;
+    }
 
     long long factorielle = 1;
 
@@ -177,16 +182,94 @@ void niveau_3(){
     std::cout << "entré un entier : ";
     std::cin >> entier_droit;
 
-    double entier_inverse = 0;
+    long signe = 1;
+
+    if (entier_droit < 0){
+        signe = -1;
+        entier_droit *= -1;
+    }
+
+    long entier_inverse = 0;
 
     while(entier_droit > 0){
-        double x = entier_droit / 10.0;
+        int dernier_chiffre = entier_droit % 10;
+        entier_inverse = entier_inverse * 10 + dernier_chiffre;
         entier_droit /= 10;
-
-        entier_inverse += std::pow(10, chiffre_nombre(entier_droit) + 1) * (x - entier_droit);
     }
+
+    entier_inverse *= signe;
 
     std::cout << "le nombre inverse est " << entier_inverse << std::endl;
 }
 
+void niveau_4(){
+
+    // Niveau 4 : Fonctions
+
+    //1. Créer une fonction qui retourne le carré d’un nombre.
+    
+    double x;
+    std::cout << "Entré un nombre : ";
+    std::cin >> x;
+
+    std::cout << x << "^2 = " << carre_nombre(x) << std::endl;
+
+    //2. Créer une fonction max(a, b) qui retourne le plus grand des deux.
+
+    double x1, x2;
+
+    std::cout << "Entré deux nombres : ";
+    std::cin >> x1;
+    std::cin >> x2;
+
+    std::cout << "Le plus grand des deux nombres est : " << max_nombre(x1,x2) << std::endl;
+
+    //3. Créer une fonction qui teste si un nombre est pair.
+
+    int pair;
+
+    std::cout << "Entré un nombre : ";
+    std::cin >> pair;
+
+    if(is_pair(pair)){
+        std::cout << pair << " est pair.\n";
+    }
+    else {
+        std::cout << pair << " est impair.\n";
+    }
+
+    //4. Créer une fonction qui calcule la moyenne de trois notes.
+
+    double note1, note2, note3;
+
+    std::cout << "Entrée 3 notes : ";
+    std::cin >> note1;
+    std::cin >> note2;
+    std::cin >> note3;
+
+    if (note1 < 0 || note1 > 20 || note2 < 0 || note2 > 20 || note3 < 0 || note3 > 20){
+        std::cout << "une note n'est pas comprise entre 0 et 20.\n";
+    }
+    else{
+        std::cout << "la moyenne des 3 est : " << moyenne_3_nombres(note1, note2, note3) << std::endl;
+    }
+
+    //5. Refaire l’exercice du nombre premier avec une fonction dédiée.
+
+    int p;
+
+    std::cout << "Entré un entier : ";
+    std::cin >> p;
+
+    if (is_prime(p)){
+        std::cout << p << " est premier.\n";
+    }
+    else {
+        std::cout << p << " n'est pas premier.\n";
+    }
+}
+
+void niveau_5(){
+    
+}
 
