@@ -1,6 +1,7 @@
 #pragma once
 #include <string>
 #include <vector>
+#include <array>
 
 //niveau 3
 bool is_prime(int p);
@@ -20,5 +21,13 @@ std::string minuscule_to_mjuscule(std::string s);
 int nbr_iteration_lettre(std::string s, std::string s2);
 
 //Niveau 7
-double moyenne_vecteur(std::vector<int> v);
-bool is_in_vecteur(std::vector<int> v, int n);
+double moyenne_vecteur(const std::vector<int>& v);
+bool is_in_vecteur(const std::vector<int>& v, int n);
+
+//Niveau 8
+std::array<std::array<int, 2>, 2> matrice_2x2();
+std::array<std::array<int, 2>, 2> add_matrice_2x2(const std::array<std::array<int, 2>, 2>& M1 , const std::array<std::array<int, 2>, 2>& M2);
+std::vector<std::vector<int>> matrice_nxm();
+int somme_element_matrice(const std::vector<std::vector<int>>& M);
+std::vector<int> diagonal_principal_matrice(const std::vector<std::vector<int>>& M);
+int nbr_0_matrice(const std::vector<std::vector<int>>& M);

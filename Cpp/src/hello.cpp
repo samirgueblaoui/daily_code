@@ -4,6 +4,7 @@
 #include <string>
 #include <algorithm>
 #include <vector>
+#include <array>
 
 void niveau_1(){
 
@@ -456,7 +457,48 @@ void niveau_7(){
     for(int x : v_trier){
         std::cout << x << std::endl;
     }
-    
-
 }
 
+void niveau_8(){
+    
+    // Niveau 8 : matrices
+
+    //1. Créer une matrice 2x2 et afficher ses éléments.
+
+    std::array<std::array<int, 2>, 2> M = matrice_2x2();
+
+    std::cout << "La matrice est : \n";
+    std::cout << M[0][0] << " " << M[0][1] << std::endl;
+    std::cout << M[1][0] << " " << M[1][1] << std::endl;
+    
+    //2. Additionner deux matrices 2x2.
+
+    std::array<std::array<int, 2>, 2> M1 = matrice_2x2();
+    std::array<std::array<int, 2>, 2> M2 = matrice_2x2();
+    std::array<std::array<int, 2>, 2> ADD = add_matrice_2x2(M1, M2);
+
+    std::cout << "la somme des 2 matrices est la matrice : \n";
+    std::cout << ADD[0][0] << " " << ADD[0][1] << std::endl;
+    std::cout << ADD[1][0] << " " << ADD[1][1] << std::endl;
+
+    //3. Calculer la somme de tous les éléments d’une matrice.
+
+    std::vector<std::vector<int>> N = matrice_nxm();
+
+    std::cout << "La somme des elements de la matrice est : " << somme_element_matrice(N) << std::endl;
+
+    //4. Afficher la diagonale principale.
+
+    std::vector<int> v = diagonal_principal_matrice(N);
+
+    std::cout << "la diagonal principal de la matrice est : ";
+
+    for(int i = 0; i < v.size(); i++){
+        std::cout << v[i] << " ";
+    }
+    std::cout << "\n";
+
+    //5. Compter combien de zéros contient la matrice.
+
+    std::cout << "Il y a " << nbr_0_matrice(N) << " zéro dans la matrice.\n";
+}

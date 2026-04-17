@@ -1,5 +1,7 @@
 #include "bibliotheque.hpp"
 #include <cmath>
+#include <iostream>
+#include <algorithm>
 
 
 //Niveau 3
@@ -136,4 +138,110 @@ bool is_in_vecteur(const std::vector<int>& v, int n){
         }
     }
     return false;
+}
+
+//Niveau 8
+
+std::array<std::array<int, 2>, 2> matrice_2x2(){
+    std::array<std::array<int, 2>, 2> M;
+
+    for(int i = 0; i < 2; i++){
+        for(int j = 0; j < 2; j++){
+            std::cout << "Entré la valeur ligne " << i + 1 << " colonne " << j + 1 << " : \n";
+            std::cin >> M[i][j];
+        }
+    }
+
+    return M;
+}
+
+std::array<std::array<int, 2>, 2> add_matrice_2x2(const std::array<std::array<int, 2>, 2>& M1 , const std::array<std::array<int, 2>, 2>& M2){
+    std::array<std::array<int, 2>, 2> ADD;
+
+    for(int i = 0; i < 2; i++){
+        for(int j = 0; j < 2; j++){
+            ADD[i][j] = M1[i][j] + M2[i][j];
+        }
+    }
+
+    return ADD;
+}
+
+std::vector<std::vector<int>> matrice_nxm(){
+    int n, m;
+
+    std::cout << "Entré le nombre de ligne de la matrice > 0: ";
+    std::cin >> n;
+
+    while(n <= 0){
+        std::cout << "Réessayer entré le nombre de ligne de la matrice > 0: ";
+        std::cin >> n;
+    }
+    
+    std::cout << "Entré le nombre de colonne de la matrice > 0: ";
+    std::cin >> m;
+
+    while(m <= 0){
+        std::cout << "Réessayer entré le nombre de colonne de la matrice > 0: ";
+        std::cin >> m;
+    }
+
+    std::vector<std::vector<int>> M(n, std::vector<int>(m));
+
+    for(int i = 0; i < n; i++){
+        for(int j = 0; j < m; j++){
+            std::cout << "Entré la valeur ligne " << i + 1 << " colonne " << j + 1 << " : \n";
+            std::cin >> M[i][j];
+        }
+    }
+
+    return M;
+}
+
+int somme_element_matrice(const std::vector<std::vector<int>>& M){
+    int sum = 0;
+
+    if(M.empty() || M[0].empty()) return 0;
+
+    else{
+        for(int i = 0; i < M.size(); i++){
+            for(int j = 0; j < M[0].size(); j++){
+                sum += M[i][j];
+            }
+        }
+    }
+
+    return sum;
+}
+
+std::vector<int> diagonal_principal_matrice(const std::vector<std::vector<int>>& M){
+
+    std::vector<int> v;
+    
+    if(M.empty() || M[0].empty()) return v;
+
+    else{
+        for(int i = 0; i < std::min(M.size(),M[0].size()); i++){
+            v.push_back(M[i][i]);
+        }
+    }
+    
+    return v;
+}
+
+int nbr_0_matrice(const std::vector<std::vector<int>>& M){
+    int compteur = 0;
+
+    if(M.empty() || M[0].empty()) return 0;
+    else {
+        for(int i = 0; i < M.size(); i++){
+            for(int j = 0; j < M[0].size(); j++){
+                if(M[i][j] == 0){
+                    compteur++;
+                }
+            }
+        }
+    }
+
+    return compteur;
 }
