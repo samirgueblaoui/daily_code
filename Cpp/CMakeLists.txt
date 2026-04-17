@@ -6,7 +6,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 add_executable(programme
     src/main.cpp
-    src/hello.cpp
+    src/exercices.cpp
     src/bibliotheque.cpp
 )
 
